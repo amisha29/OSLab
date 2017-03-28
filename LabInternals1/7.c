@@ -6,13 +6,13 @@
 
 void childProcess()
 {
-    printf("\nFrom child\n");
-    printf("Child proocess id : %d \nParent process id : %d\n",getpid(),getppid());
+    printf("\nFrom child");
+    printf("\nChild proocess id : %d \n",getpid());
 }
 
 void parentProcess()
 {
-    printf("\nFrom parent\n");
+    printf("\nFrom parent");
     printf("\nparent process id : %d\n",getpid());
 }
 
@@ -20,7 +20,7 @@ int main()
 {
     pid_t pid;
     printf("\nActual PArent process id : %d\n", getpid());
-    for(int i = 0; i < 2; i++)
+    for(int i = 0; i < 3; i++)
     {
         pid = fork();
         if(pid < 0)
