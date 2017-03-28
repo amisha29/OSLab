@@ -20,7 +20,7 @@ int main()
 {
     pid_t pid;
     printf("\nActual PArent process id : %d\n", getpid());
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < 2; i++)
     {
         pid = fork();
         if(pid < 0)

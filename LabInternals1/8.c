@@ -10,10 +10,10 @@ void childProcess()
     printf("Child proocess id : %d \nParent process id : %d",getpid(),getppid());
 }
 
-void parentProcess()
+void parentProcess(pid_t pid)
 {
     printf("\nFrom parent\n");
-    printf("parent process id : %d",getpid());
+    printf("parent process id : %d\nChild process id: %d\n",getpid(),pid);
 }
 
 int main()
@@ -32,11 +32,11 @@ int main()
     else
     {
         pid = wait(NULL);
-        if(pid>0)
-        {
-            printf("\nFrom Parent: Child Pid: %d\n",pid);                
-        }
-        parentProcess();
+        // if(pid>0)
+        // {
+        //     printf("\nFrom Parent: Child Pid: %d\n",pid);                
+        // }
+        parentProcess(pid);
         
     }
 }
